@@ -1,3 +1,48 @@
+/**
+ * ToolbarPlugin component provides a toolbar for text formatting and block type toggling
+ * in a Lexical editor. It includes buttons for undo, redo, text formatting (bold, italic,
+ * underline, strikethrough), text alignment (left, center, right, justify), font size
+ * adjustment, font family selection, and color pickers for text and background colors.
+ *
+ * @returns {JSX.Element} The rendered toolbar component.
+ *
+ * @component
+ * @example
+ * return (
+ *   <ToolbarPlugin />
+ * )
+ *
+ * @function
+ * @name ToolbarPlugin
+ */
+
+/**
+ * Divider component renders a visual divider in the toolbar.
+ *
+ * @returns {JSX.Element} The rendered divider component.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Divider />
+ * )
+ *
+ * @function
+ * @name Divider
+ */
+
+/**
+ * useActiveBlock hook returns the currently active block type in the Lexical editor.
+ *
+ * @returns {string | null} The type of the active block or null if no block is active.
+ *
+ * @hook
+ * @example
+ * const activeBlock = useActiveBlock();
+ *
+ * @function
+ * @name useActiveBlock
+ */
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
 import {
@@ -47,6 +92,34 @@ const colors = [
   '#4682B4', '#DA70D6', '#EE82EE', '#FF00FF', '#9932CC'
 ];
 
+/**
+ * ToolbarPlugin is a React component that provides a toolbar for text formatting
+ * and editing within a Lexical editor. It includes buttons for undo, redo, 
+ * text formatting (bold, italic, underline, strikethrough), text alignment 
+ * (left, center, right, justify), heading levels (h1, h2, h3, h4, h5), 
+ * font size adjustment, and color pickers for text and background colors.
+ *
+ * @returns {JSX.Element} The rendered toolbar component.
+ *
+ * @component
+ * @example
+ * // Usage example:
+ * import ToolbarPlugin from './ToolbarPlugin';
+ * 
+ * function MyEditor() {
+ *   return (
+ *     <div>
+ *       <ToolbarPlugin />
+ *        Other editor components 
+ *     </div>
+ *   );
+ * }
+ *
+ * @remarks
+ * This component uses Lexical's editor context and commands to interact with 
+ * the editor state. It also maintains internal state for various formatting 
+ * options and updates the toolbar based on the current selection in the editor.
+ */
 export default function ToolbarPlugin() {
   const [editor] = useLexicalComposerContext();
   const toolbarRef = useRef(null);
@@ -179,6 +252,19 @@ export default function ToolbarPlugin() {
         selection.getNodes().forEach((node) => {
           if ($isTextNode(node)) {
             node.setStyle(`background-color: ${color}`);
+          }
+        });
+      }
+    });
+  }
+
+  function applyFontFamily(fontFamily: string) {
+    editor.update(() => {
+      const selection = $getSelection();
+      if ($isRangeSelection(selection)) {
+        selection.getNodes().forEach((node) => {
+          if ($isTextNode(node)) {
+            node.setStyle(`font-family: ${fontFamily}`);
           }
         });
       }
@@ -328,8 +414,20 @@ export default function ToolbarPlugin() {
           <span>+</span>
         </button>
       </div>
-        <Divider/>
-      {/* <input
+      <Divider />
+      {/* <select
+        onChange={(e) => applyFontFamily(e.target.value)}
+        className="toolbar-item font-family-picker"
+        aria-label="Font Family"
+      >
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+      </select>
+      <Divider />
+      <input
         type="color"
         value={textColor}
         onChange={(e) => applyTextColor(e.target.value)}

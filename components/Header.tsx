@@ -3,8 +3,15 @@ import React from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
-
-const Header = ({children, className}:HeaderProps) => {
+/**
+ * Header component that displays a logo and optional children elements.
+ * 
+ * @param {Object} props - The properties object.
+ * @param {React.ReactNode} props.children - The children elements to be displayed inside the header.
+ * @param {string} props.className - Additional class names to style the header.
+ * @returns {JSX.Element} The rendered header component.
+ */
+const Header = ({children, className}: HeaderProps) => {
     return (
       <div className={cn("header", className)}>
           <Link href='/' className='md:flex-1 '>

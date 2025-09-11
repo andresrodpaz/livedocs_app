@@ -1,8 +1,23 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
+const safeClassNameRegex = /^[a-zA-Z0-9-_]+$/;
+
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  // Filtramos los inputs.
+  const filteredInputs = inputs.map(input => {
+    // Si el input es una cadena de texto, la validamos.
+    if (typeof input === 'string') {
+      // Si la cadena no es un nombre de clase seguro, devolvemos una cadena vacía.
+      if (!safeClassNameRegex.test(input)) {
+        return '';
+      }
+    }
+    // Si no es una cadena o si es segura, la devolvemos sin cambios.
+    return input;
+  });
+
+  return twMerge(clsx(filteredInputs));
 }
 
 export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));

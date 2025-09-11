@@ -1,0 +1,24 @@
+{
+  "name": "live-docs-e2e-tests",
+  "version": "1.0.0",
+  "description": "E2E tests for Live Docs application",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:auth": "playwright test tests/auth/",
+    "test:dashboard": "playwright test tests/dashboard/",
+    "test:editor": "playwright test tests/editor/",
+    "test:profile": "playwright test tests/profile/",
+    "test:integration": "playwright test tests/integration/",
+    "test:mobile": "playwright test --project=mobile-chrome --project=mobile-safari",
+    "test:desktop": "playwright test --project=chromium-desktop --project=firefox-desktop --project=webkit-desktop",
+    "test:report": "playwright show-report",
+    "install-browsers": "playwright install",
+    "setup": "npm run install-browsers"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

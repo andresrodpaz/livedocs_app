@@ -1,0 +1,58 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: development
+      TEST_ENV: true
+      COVERAGE: true
+      CI: true
+      GIT_PIPELINE: true
+
+    steps:
+      # 1. Descarga el código fuente del repositorio
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Configura Node.js en la versión especificada
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Instala las dependencias del proyecto usando npm ci para mayor confiabilidad
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Ejecuta los tests unitarios y de integración con Jest, generando reporte de cobertura
+      - name: Run unit and integration tests
+        run: npm run test -- --coverage
+
+      # 5. Sube el reporte de cobertura como artefacto para revisión en el pipeline
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+
+      # 6. Instala los navegadores necesarios para Playwright (tests E2E)
+      - name: Run Playwright install
+        run: npx playwright install
+
+      # 7. Ejecuta los tests E2E con Playwright para validar la UI y flujos completos
+      - name: Run E2E tests
+        run: npx playwright test
+
+      # 8. Sube el reporte de Playwright como artefacto para revisión visual
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/

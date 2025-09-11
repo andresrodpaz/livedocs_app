@@ -1,0 +1,56 @@
+[
+    {
+        "name": "AMP_MKTG_fe4beb374f",
+        "value": "JTdCJTdE",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "__clerk_db_jwt",
+        "value": "dvb_32BqZWhltnztYomC1QumSZ9SeBI",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "__clerk_db_jwt_xw54MeN9",
+        "value": "dvb_32BqZWhltnztYomC1QumSZ9SeBI",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "AMP_fe4beb374f",
+        "value": "JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjJkNWQzNTJkZi1iZmI4LTRhNzgtODIzNC02M2Q4MzYxZmQ0MGYlMjIlMkMlMjJ1c2VySWQlMjIlM0ElMjIwNWM2N2JmZS1mNjI5LTQ2ZTUtOWIxZi1iMTYyZmE4ZmQ2MzElMjIlMkMlMjJzZXNzaW9uSWQlMjIlM0ExNzU1OTY4MjAxMTM0JTJDJTIyb3B0T3V0JTIyJTNBZmFsc2UlMkMlMjJsYXN0RXZlbnRUaW1lJTIyJTNBMTc1NTk2ODIwMTE0MyUyQyUyMmxhc3RFdmVudElkJTIyJTNBMCU3RA",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "clerk_active_context",
+        "value": "sess_32CndfuBVYjyZ0yseEoGdNSvxQk:",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "__session",
+        "value": "eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18ya1pnTTdlb1JqTDF6VmxRQTBQQnNpVkFPYmUiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE3NTY5MzM4NjIsImZ2YSI6WzQsLTFdLCJpYXQiOjE3NTY5MzM4MDIsImlzcyI6Imh0dHBzOi8vcmVndWxhci1oaXBwby0yMy5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTY5MzM3OTIsInNpZCI6InNlc3NfMzJDbmRmdUJWWWp5WjB5c2VFb0dkTlN2eFFrIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8ybFZmNGtUcVk1WWRHRHFoek9KZU8wTXU0Z0YifQ.3Tb-yE2x6Cu6wNDXygEv4YPD-kl9cM_oAND7ensW0ef6qPDdoohrXRmoHE0I3YWxAL3roZril_ZboGvMe1PIfqXT2nQNSihh_Dft9fdQnzYI2x3AqflXF__ukvVzb8w9i3pRyUh_uPn_XF-BZNM5iMuWL3AiAcSx9yCZYollZDkrscy968gcjDyE9SLNj6SMhvYLYSUuqyOxoCJ1h9toajIlcqd-M4A8P8W4MxJ3LtAeh6DExtONZQ5e3fbgi3vQ_e8ByB_IvYMMtScA5ZofVazQFoemqQaMk78xC-nG_-yU7LE3-WgGOImva4kjFTfvqnbKWw2zqAjZY_rs9JNALA",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "__session_xw54MeN9",
+        "value": "eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18ya1pnTTdlb1JqTDF6VmxRQTBQQnNpVkFPYmUiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE3NTY5MzM4NjIsImZ2YSI6WzQsLTFdLCJpYXQiOjE3NTY5MzM4MDIsImlzcyI6Imh0dHBzOi8vcmVndWxhci1oaXBwby0yMy5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTY5MzM3OTIsInNpZCI6InNlc3NfMzJDbmRmdUJWWWp5WjB5c2VFb0dkTlN2eFFrIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8ybFZmNGtUcVk1WWRHRHFoek9KZU8wTXU0Z0YifQ.3Tb-yE2x6Cu6wNDXygEv4YPD-kl9cM_oAND7ensW0ef6qPDdoohrXRmoHE0I3YWxAL3roZril_ZboGvMe1PIfqXT2nQNSihh_Dft9fdQnzYI2x3AqflXF__ukvVzb8w9i3pRyUh_uPn_XF-BZNM5iMuWL3AiAcSx9yCZYollZDkrscy968gcjDyE9SLNj6SMhvYLYSUuqyOxoCJ1h9toajIlcqd-M4A8P8W4MxJ3LtAeh6DExtONZQ5e3fbgi3vQ_e8ByB_IvYMMtScA5ZofVazQFoemqQaMk78xC-nG_-yU7LE3-WgGOImva4kjFTfvqnbKWw2zqAjZY_rs9JNALA",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "__client_uat_xw54MeN9",
+        "value": "1756933510",
+        "domain": "localhost",
+        "path": "/"
+    },
+    {
+        "name": "__client_uat",
+        "value": "1756933510",
+        "domain": "localhost",
+        "path": "/"
+    }
+]
